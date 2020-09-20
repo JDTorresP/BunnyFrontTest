@@ -1,0 +1,41 @@
+@import '../../styles/mixins'
+@import '../../styles/colors'
+@import '../../styles/variables'
+
+.task-card-container
+    width: 50%
+    background-color: $secondary-background
+    border-radius: $boder-element-x
+    margin: 10px
+    padding: 40px
+    min-height: 450px
+    box-shadow: 0 2px 5px 0 $shadow-1
+    .cards-container
+        display: grid
+        grid-template-columns: 1fr 1fr
+        grid-gap: 20px
+        padding: 0 20px
+        justify-content: center
+        align-items: center
+        max-height: 400px
+        overflow-y: scroll
+.task-card
+    display: grid
+    align-items: center
+    grid-template-columns: 70% 20%
+    background-color: $secondary-color
+    border-radius: $boder-element-x
+    margin: 10px 0
+    height: 90px
+    min-width: 180px
+    transition: transform .2s
+    box-shadow: 0 2px 5px 0 $shadow-1
+    .description-card
+        color: $primary-background
+        margin-left: 20px
+    .state-container
+        width: 100px
+    &:hover
+        border: 2px solid $primary-color
+        transform: scale(1.1)
+        height: 100px

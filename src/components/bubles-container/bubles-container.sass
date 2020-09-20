@@ -1,0 +1,25 @@
+@import '../../styles/mixins'
+@import '../../styles/colors'
+@import '../../styles/variables'
+
+.bubles-container
+    +flex(start,center,column)
+    max-height: 300px
+    min-width: 250px
+    padding: 0 10px
+    background-color: $terciary-background
+    border-radius: $boder-element-x
+    .users-bubles-list
+        width: 100%
+        overflow-y: scroll
+        padding: 0
+        list-style-type: none
+        .user-line 
+            +flex(center)
+            padding: 5px
+            .user-logo-buble
+                border-radius: 50%
+                width: 30px
+    .see-more-opt
+        width: 100%
+        padding: 0 0 10px 15px
