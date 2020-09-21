@@ -1,4 +1,7 @@
 @import '../../styles/mixins'
+@import '../../styles/colors'
+@import '../../styles/variables'
+
 .user-card
     +flex(center, space-evenly)
     min-width: 500px
@@ -8,5 +11,79 @@
         border-radius: 50%
         width: 200px
         height: 200px
+        border: 1px solid $secondary-color
     .user-info
         min-width: 200px
+        .focused
+            border: 1px solid $secondary-color
+            background-color: white
+        h2 
+            cursor: text  
+        p 
+            cursor: text
+        .warning
+            color: red
+            font-size: $f-size-s
+        .new-options
+            +flex(center, flex-start)
+            .go-back
+                border: 1px solid red
+                cursor: pointer
+                color: red
+                border-radius: $boder-element-s
+                padding: 5px
+                margin-left: 10px
+                &:hover
+                    background-color: red
+                    color: white
+                    i 
+                        color: white
+
+            .add-user
+                border: 1px solid green
+                cursor: pointer
+                color: green
+                border-radius: $boder-element-s
+                padding: 5px 15px
+                &:hover
+                    background-color: green
+                    color: white
+                    i 
+                        color: white
+
+        i 
+            position: relative
+            cursor: pointer
+            margin: 0 5px
+            &.add
+                color: green
+            &.erase
+                color: red
+            .tooltiptext 
+                visibility: hidden
+                width: 120px
+                background-color: #555
+                color: #fff
+                text-align: center
+                border-radius: 6px
+                padding: 5px 0
+                position: absolute
+                z-index: 1
+                top: 125%
+                left: 50%
+                margin-left: -60px
+                opacity: 0
+                transition: opacity 0.3s
+                &::after
+                    content: ""
+                    position: absolute
+                    bottom: 100%
+                    left: 50%
+                    margin-left: -5px
+                    border-width: 5px
+                    border-style: solid
+                    border-color: #555 transparent transparent transparent
+            &:hover
+                .tooltiptext
+                    visibility: visible
+                    opacity: 1

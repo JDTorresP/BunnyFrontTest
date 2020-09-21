@@ -9,6 +9,8 @@
     padding: 0 10px
     background-color: $terciary-background
     border-radius: $boder-element-x
+    h2 
+        margin: 5px
     .users-bubles-list
         width: 100%
         overflow-y: scroll
@@ -17,9 +19,15 @@
         .user-line 
             +flex(center)
             padding: 5px
+            font-weight: 900
             .user-logo-buble
                 border-radius: 50%
                 width: 30px
+                margin-right: 10px
+            &:hover
+                cursor: pointer
+                border-radius: $boder-element
+                background-color: $light-blue
     .see-more-opt
         width: 100%
         padding: 0 0 10px 15px
