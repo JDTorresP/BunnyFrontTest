@@ -1,14 +1,34 @@
 <script>
+	import { usersData } from '../../store/store.js';
+
+	import { onMount, afterUpdate, beforeUpdate, onDestroy } from "svelte";
 	import UserCard from "../user-card/UserCard.svelte"				
 	import BublesContainer from "../bubles-container/BublesContainer.svelte"
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 	const sectionTitle = 'Team';
-	export let data	
+
 	let isCreating = false
-	let currentUser = !!data.length ? [...data].reverse()[0] : null;
-	let usersSliced = !!data.length ? [...data].reverse().slice(1) : null;
+	$: currentUser = !!$usersData.length ? [...$usersData].reverse()[0] : null;
+	$: usersSliced = !!$usersData.length ? [...$usersData].reverse().slice(1) : null;
 	
+
+	onMount(async () => {
+		console.log("Mounted USERS", $usersData);
+	});
+
+	beforeUpdate(() => {
+		console.log("beforeUpdate APP", $usersData);
+	});
+
+	afterUpdate(() => {
+        console.log("afterUpdate USERS", $usersData);
+	});
+
+	onDestroy(() => {
+		console.log("Destroyed USERS", $usersData);
+	});
+
 	export const uiCreateNewUser = () => {
 		isCreating = true
 	}

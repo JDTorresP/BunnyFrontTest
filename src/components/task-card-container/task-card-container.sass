@@ -10,6 +10,16 @@
     padding: 40px
     min-height: 450px
     box-shadow: 0 2px 5px 0 $shadow-1
+    position: relative
+    .add-task
+        cursor: pointer
+        position: absolute
+        top: 20px
+        right: 30px
+        &:hover
+            border: 1px solid $primary-color
+            padding: 5px 15px
+            border-radius: $boder-element
     .cards-container
         display: grid
         grid-template-columns: 1fr 1fr
@@ -19,23 +29,3 @@
         align-items: center
         max-height: 400px
         overflow-y: scroll
-.task-card
-    display: grid
-    align-items: center
-    grid-template-columns: 70% 20%
-    background-color: $secondary-color
-    border-radius: $boder-element-x
-    margin: 10px 0
-    height: 90px
-    min-width: 180px
-    transition: transform .2s
-    box-shadow: 0 2px 5px 0 $shadow-1
-    .description-card
-        color: $primary-background
-        margin-left: 20px
-    .state-container
-        width: 100px
-    &:hover
-        border: 2px solid $primary-color
-        transform: scale(1.1)
-        height: 100px

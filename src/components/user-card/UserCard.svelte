@@ -1,15 +1,14 @@
 <script>
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
-
+	const notImage = process.env.external.not_image;
 	export let IMG_URL = process.env.external.avatar_path;
 	export let pending = "4 Pending Tasks"
 	const NEW_NAME = "Please Write A Name"
 	export let newUserName = NEW_NAME
 	export let user
 	export let isCreating	
-	let showWarn = false
-	let focusedCreate = false	
+	let showWarn = false	
 
 	export const onFocusOut = () => {
 		dispatch('UPDATE_USER', {
@@ -31,7 +30,6 @@
 			showWarn = true	
 		} else {
 			showWarn = false
-			focusedCreate = false
 		}
 		if(!showWarn){
 			dispatch('CREATE_NEW_USER', {
@@ -46,7 +44,6 @@
 		if (newUserName === NEW_NAME) {
 			newUserName = '';
 			showWarn = false
-			focusedCreate = true
 		} 
 	}
 
@@ -75,7 +72,7 @@
 				</i>
 			</div>	
 		{:else}
-			<img class="user-logo" src={'https://res.cloudinary.com/caavat/image/upload/v1600632928/Bunny/Photo-not-available.jpg'} alt="user-logo"/>
+			<img class="user-logo" src={notImage} alt="user-logo"/>
 			<div class="user-info">
 				<h2>Not Found User</h2>
 			</div>	

@@ -1,0 +1,48 @@
+@import '../../styles/mixins'
+@import '../../styles/colors'
+@import '../../styles/variables'
+
+.task-card
+    position: relative
+    display: grid
+    align-items: center
+    grid-template-columns: 20% 50% 20%
+    background-color: $secondary-color
+    border-radius: $boder-element-x
+    margin: 10px 0
+    height: 90px
+    min-width: 180px
+    transition: transform .2s
+    box-shadow: 0 2px 5px 0 $shadow-1
+    .erase-task
+        cursor: pointer
+        position: absolute
+        top: 0
+        right: 0
+        font-size: $f-size-xl
+        i 
+            color: red
+        &:hover
+            i 
+                color: white
+                background-color: red
+                border-radius: 50%
+    img 
+        margin-left: 10px
+        height: 30px
+        border-radius: 50%
+        border: 1px solid white
+    .description-card
+        color: $primary-background
+        margin-left: 20px
+        &.focused
+            border: 1px solid $secondary-color
+            background-color: $terciary-background
+            font-size: $f-size
+            color: black
+    .state-container
+        width: 100px
+    &:hover
+        border: 2px solid $primary-color
+        transform: scale(1.1)
+        height: 100px

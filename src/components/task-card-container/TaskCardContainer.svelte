@@ -1,12 +1,24 @@
 <script>
-
+	import Task from "../task/Task.svelte"
+	import { TASKS_STATES } from '../../entities/constants';
+			
+	import { createEventDispatcher } from 'svelte';
+	const dispatch = createEventDispatcher();
+	
 	export let title
 	export let data	
 	export let done	
-	let yes = !!done; 
-	let description = 'Terminar front';
-	let doneState = 'Done!';
-	let todoState = 'Todo';
+
+	$: tasksData = data
+
+	export const uiCreateNewTask = () => {
+		const _tasksData = [...tasksData, {
+			isNew: true,
+			state: TASKS_STATES.OPEN
+		}];
+		tasksData = _tasksData;
+	}
+	
 </script>
 			
 <style type="text/scss">
@@ -16,15 +28,21 @@
 
 <div class="task-card-container">
 	<h3>{title}</h3>
+	{#if !done}
+		<span class="add-task" on:click={uiCreateNewTask}>
+			<i class="fas fa-plus-circle"></i>
+			Add New Task
+		</span>
+	{/if}
+
 	<div class="cards-container">
-		{#each data as task}
-			<div class="task-card">
-				<h4 class="description-card">{task.description}</h4>
-				<div class="state-container">
-					<input class="tgl tgl-flip" id="cb5" type="checkbox" checked={yes}/>
-					<label class="tgl-btn" data-tg-off="{todoState}" data-tg-on="{doneState}" for="cb5"></label>
-				</div>
-			</div>
+		{#each tasksData as task}
+			<Task task={task}
+				on:DELETE_TASK
+				on:UI_DELETE_NEW
+				on:UPDATE_TASK
+				on:CREATE_NEW_TASK
+			/>
 		{/each}	
 	</div>
 </div>	
