@@ -39,3 +39,11 @@
         cursor: pointer
         width: 100%
         padding: 0 0 10px 15px
+
+@media only screen and (max-width: $break-small-mobile)
+    .bubles-container
+        width: 260px
+        &.expand
+            width: 350px
+        .users-bubles-list
+            +flex(center, flex-start)

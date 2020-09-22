@@ -22,4 +22,6 @@ Bunny Front End Tasks Manager app
 - 9:01 - 9:05 Deploy V1 on [netlify V1 deploy!](https://trusting-heyrovsky-a3be03.netlify.app/)
 
 - 19:30 - 20:10 Enhance Design Details, add filters and pending tasks
-- 20:10 - 20:11 Deploy V1 on [netlify V2 deploy!](https://clever-varahamihira-0f2f85.netlify.app)
+- 20:10 - 20:11 Deploy V2 on [netlify V2 deploy!](https://distracted-mestorf-99a4eb.netlify.app/)
+- 20:20 - 20:40 Make web mobile friendly
+- 20:10 - 20:11 Deploy last version V3 on [netlify V3 deploy!](https://clever-varahamihira-0f2f85.netlify.app)

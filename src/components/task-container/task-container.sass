@@ -4,4 +4,9 @@
     +flex(center, center, column)
     .task-columns-container
         width: 100%
-        +flex(center, center)     
+        +flex(center, center)
+
+@media only screen and (max-width: $break-small-mobile)
+    .task-container
+         .task-columns-container
+            flex-direction: column
