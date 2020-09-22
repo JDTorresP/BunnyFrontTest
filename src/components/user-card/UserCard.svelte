@@ -1,9 +1,12 @@
 <script>
+	import { tasksData, currentStoreUser } from '../../store/store';
 	import { createEventDispatcher } from 'svelte';
 	const dispatch = createEventDispatcher();
 	const notImage = process.env.external.not_image;
 	export let IMG_URL = process.env.external.avatar_path;
-	export let pending = "4 Pending Tasks"
+	$:pending =`${!!Object.keys($currentStoreUser).length && !!$tasksData.length ?
+		$tasksData.filter(t => t.user_id === $currentStoreUser._id).length : '0'
+	} Pending Tasks`
 	const NEW_NAME = "Please Write A Name"
 	export let newUserName = NEW_NAME
 	export let user

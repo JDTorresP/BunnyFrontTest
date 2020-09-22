@@ -1,5 +1,5 @@
 <script>
-	import { usersData } from '../../store/store.js';
+	import { usersData, currentStoreUser } from '../../store/store.js';
 
 	import { onMount, afterUpdate, beforeUpdate, onDestroy } from "svelte";
 	import UserCard from "../user-card/UserCard.svelte"				
@@ -12,9 +12,11 @@
 	$: currentUser = !!$usersData.length ? [...$usersData].reverse()[0] : null;
 	$: usersSliced = !!$usersData.length ? [...$usersData].reverse().slice(1) : null;
 	
-
 	onMount(async () => {
 		console.log("Mounted USERS", $usersData);
+		currentStoreUser.update(dat => {
+			return dat = currentUser || {}
+		});
 	});
 
 	beforeUpdate(() => {

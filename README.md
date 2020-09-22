@@ -19,4 +19,7 @@ Bunny Front End Tasks Manager app
 
 ### 21/09/2020
 - 7:00 - 9:00 Finish Crud logic for users and tasks
-- 9:01 - 9:05 Deploy on [netlify deploy!](https://trusting-heyrovsky-a3be03.netlify.app/)
+- 9:01 - 9:05 Deploy V1 on [netlify V1 deploy!](https://trusting-heyrovsky-a3be03.netlify.app/)
+
+- 19:30 - 20:10 Enhance Design Details, add filters and pending tasks
+- 20:10 - 20:11 Deploy V1 on [netlify V2 deploy!](https://clever-varahamihira-0f2f85.netlify.app)

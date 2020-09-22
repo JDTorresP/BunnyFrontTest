@@ -5,10 +5,17 @@
 .bubles-container
     +flex(start,center,column)
     max-height: 300px
-    min-width: 250px
+    width: 150px
     padding: 0 10px
     background-color: $terciary-background
     border-radius: $boder-element-x
+    transition: width 500ms ease-out
+    &.expand
+        width: 400px
+        .users-bubles-list
+            display: grid
+            grid-template-columns: 30% 30% 30%
+            grid-template-rows: repeat(3, 50px)
     h2 
         margin: 5px
     .users-bubles-list
@@ -29,5 +36,6 @@
                 border-radius: $boder-element
                 background-color: $light-blue
     .see-more-opt
+        cursor: pointer
         width: 100%
         padding: 0 0 10px 15px
